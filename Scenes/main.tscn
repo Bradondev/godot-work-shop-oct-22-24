@@ -1,0 +1,150 @@
+[gd_scene load_steps=6 format=3 uid="uid://dog3uxkium0rg"]
+
+[ext_resource type="Script" path="res://Code/ToolOne.gd" id="1_41jrg"]
+[ext_resource type="Script" path="res://Code/main.gd" id="1_tjp8i"]
+[ext_resource type="Texture2D" uid="uid://nk074p85nwik" path="res://Assests/ManHead.png" id="2_cxp4r"]
+
+[sub_resource type="Gradient" id="Gradient_44fbr"]
+offsets = PackedFloat32Array(0.707792)
+colors = PackedColorArray(0.223529, 0.290196, 0.313726, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_43o7b"]
+gradient = SubResource("Gradient_44fbr")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tjp8i")
+
+[node name="Details" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 651.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="TextureRect" parent="Details"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_43o7b")
+
+[node name="TestImage" type="TextureRect" parent="."]
+offset_left = 718.0
+offset_right = 752.0
+offset_bottom = 51.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_cxp4r")
+script = ExtResource("1_41jrg")
+Sprite = ExtResource("2_cxp4r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 387.0
+offset_top = 277.0
+offset_right = 593.0
+offset_bottom = 458.0
+theme_override_font_sizes/normal_font_size = 32
+fit_content = true
+
+[node name="ButtonHolder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="ButtonHolder"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 162.0
+offset_right = 231.0
+offset_bottom = 211.0
+text = "Get Nodes"
+
+[node name="TextEdit" type="TextEdit" parent="ButtonHolder"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 230.0
+offset_right = 254.0
+offset_bottom = 265.0
+placeholder_text = "Name of group"
+
+[node name="Holder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 341.0
+offset_bottom = 132.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Holder"]
+layout_mode = 0
+offset_left = 563.0
+offset_top = 518.0
+offset_right = 1154.0
+offset_bottom = 650.0
+
+[node name="Image" type="TextureRect" parent="Holder/HBoxContainer" groups=["group"]]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cxp4r")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Holder/HBoxContainer/Image"]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 40.0
+text = "1"
+
+[node name="Image2" type="TextureRect" parent="Holder/HBoxContainer" groups=["group"]]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cxp4r")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Holder/HBoxContainer/Image2"]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 41.0
+text = "2
+"
+
+[node name="Image3" type="TextureRect" parent="Holder/HBoxContainer" groups=["group"]]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cxp4r")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Holder/HBoxContainer/Image3"]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 40.0
+text = "3
+"
+
+[node name="Image4" type="TextureRect" parent="Holder/HBoxContainer" groups=["group"]]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cxp4r")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Holder/HBoxContainer/Image4"]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 40.0
+text = "4"
+
+[node name="Image5" type="TextureRect" parent="Holder/HBoxContainer" groups=["group"]]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_cxp4r")
+stretch_mode = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Holder/HBoxContainer/Image5"]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 40.0
+text = "5"
+
+[connection signal="pressed" from="ButtonHolder/Button" to="." method="_on_button_pressed"]

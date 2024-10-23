@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ObjectData" load_steps=3 format=3 uid="uid://23cniup3qhd2"]
+
+[ext_resource type="Script" path="res://Code/TestResource.gd" id="1_fw4un"]
+[ext_resource type="Texture2D" uid="uid://c5tufsdr0p3mt" path="res://Assests/WomanHead.png" id="2_86s4b"]
+
+[resource]
+script = ExtResource("1_fw4un")
+Name = ""
+Details = ""
+Sprite = ExtResource("2_86s4b")
+ArrayOfObject = Array[ExtResource("1_fw4un")]([])
